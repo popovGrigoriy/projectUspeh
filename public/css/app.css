@@ -1,0 +1,24 @@
+.navbar-brand img {width: 100px}
+
+.footer{
+  background: #f0f0f0;
+  padding: 10px;
+  color: #000;
+
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+.sub{
+  font-size: 0.6em;
+}
+
+hr{
+  padding: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
