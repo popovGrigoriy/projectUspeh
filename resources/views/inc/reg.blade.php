@@ -14,5 +14,12 @@
       <div class="alert alert-danger">{{ $message }}</div>
       @enderror
     </div>
+    <div class="form-group">
+      <label for="password">Повторите пароль</label>
+      <input type="password" class="form-control" id="password2" name="password2">
+      @error('password2')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+    </div>
     <button type="submit" class="btn btn-primary w-100">Зарегистрировать</button>
   </form>

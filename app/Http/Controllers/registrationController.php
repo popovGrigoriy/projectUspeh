@@ -12,7 +12,8 @@ class registrationController extends Controller
 
       $validateFields = $request->validate([
         'login' => 'required',
-        'password' => 'required'
+        'password' => 'required',
+        'password2' => 'required'
       ]);
 
       if(User::where('login', $validateFields['login'])->exists()){
@@ -20,7 +21,11 @@ class registrationController extends Controller
           'login' => 'Пользователь уже зарегистрирован'
         ]);
       }
-
+      if($request->only(['password']) != $request->only(['password2'])){
+        return redirect(route('registration'))->withErrors([
+          'password' => 'Пароль не совпадает'
+        ]);
+      }
       $user = User::create($validateFields);
       if($user){
         // Auth::login($user);
@@ -29,5 +34,14 @@ class registrationController extends Controller
       return redirect(route('registration'))->withErrors([
         'formError' => 'Произошла ошибка при сохранении'
       ]);
+
+
+    }
+    public function messages (){
+      return [
+      'login.required' => 'Поле логин является обязательным',
+      'password.required' => 'Поле пароль является обязательным',
+      'password2.required' => 'Поле повторения пароля является обязательным',
+    ];
     }
 }

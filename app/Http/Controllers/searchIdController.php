@@ -21,8 +21,8 @@ class searchIdController extends Controller
         $Object = new flat;
       }
       $id = "";
-      (int)$id = substr($fullId['searchId'], 1);
-      return view('/findObject', ['data'=>$Object->find($id, 12)]);
+      $id = substr($fullId['searchId'], 1);
+      return view('/findObject', ['data'=> [$Object->find($id)]]);
 
     }
 }
