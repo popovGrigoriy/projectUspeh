@@ -78,3 +78,6 @@ Route::get('/findObject', function(){
     })->name('fail');
 
 Route::post('/findObject', [\App\http\Controllers\searchIdController::class, 'getObject'])->name('findObject');
+Route::get('/addObject', function(){
+      return view('addObject');
+    })->name('addObject');
