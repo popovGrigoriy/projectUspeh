@@ -22,3 +22,7 @@ hr{
   margin-bottom: 8px;
 }
 
+.content{
+  border-right: 1px solid black;
+}
+

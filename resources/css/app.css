@@ -21,3 +21,7 @@ hr{
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+.content{
+  border-right: 1px solid black;
+}

@@ -16,11 +16,11 @@
           <a href="/object" class="nav-link">Обьекты</a>
         </li>
         <li class="nav-item dropdown">
-          <a href="/addObject" class="nav-link dropdown-toggle" id = "addObject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Добавить объект</a>
+          <a class="nav-link dropdown-toggle" id = "addObject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Добавить объект</a>
           <div class="dropdown-menu" aria-labelledby="addObject">
-            <a class="dropdown-item" href="#">Дом</a>
-            <a class="dropdown-item" href="#">Квартиру</a>
-            <a class="dropdown-item" href="#">Участок</a>
+            <a class="dropdown-item" href="{{ route('addObject', ['object' => 1]) }}">Дом</a>
+            <a class="dropdown-item" href="{{ route('addObject', ['object' => 2]) }}">Квартиру</a>
+            <a class="dropdown-item" href="{{ route('addObject', ['object' => 3]) }}">Участок</a>
           </div>
         </li>
         <li class="nav-item">
