@@ -82,3 +82,4 @@ Route::get('/addObject', function(){
 
       return view('addObject');
     })->name('addObject');
+Route::post('/add', [\App\Http\Controllers\addObjectController::class, 'addObject'])->name('addObjectPost');

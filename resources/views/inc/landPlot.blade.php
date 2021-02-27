@@ -1,5 +1,6 @@
 <div class="container">
-  <form action="#">
+  <form action="{{ route('addObjectPost') }}" method="post">
+    @csrf
     <div class="form-group">
       <div class="row">
         <h2 align = "center">Добавление Участка</h2>
@@ -8,11 +9,21 @@
 
       <div class="row">
         <div class="col">
-          <label for="landmark">Район:</label>
+          <label for="type">Тип объекта:</label>
         </div>
         <div class="col">
-          <select style="height: 30px; width: 182px;">
-            <option>СЖМ</option>
+          <input type="text" name="type" id="type" value="Участок"><br>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col">
+          <label for="landMark">Район:</label>
+        </div>
+        <div class="col">
+          <select name = "landMark" style="height: 30px; width: 182px;">
+            <option selected>СЖМ</option>
             <option>ВЖМ</option>
             <option>ЗЖМ</option>
             <option>Центр</option>
@@ -98,6 +109,16 @@
 
       <div class="row">
         <div class="col">
+          <label for="sewerage">канализация?:</label>
+        </div>
+        <div class="col">
+          <input type="text" name="sewerage" value=""><br>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col">
           <label for="slope">Уклон участка:</label>
         </div>
         <div class="col">
@@ -157,6 +178,11 @@
       </div>
       <hr>
 
+      <div class="row">
+        <div class="col">
+          <input class = "btn btn-success" type="submit" name="btn_submit" value="Добавить">
+        </div>
+      </div>
     </div>
   </form>
 </div>

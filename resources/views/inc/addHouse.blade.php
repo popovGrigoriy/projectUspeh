@@ -1,5 +1,6 @@
 <div class="container">
-  <form action="#">
+  <form action="{{ route('addObjectPost') }}" method="post">
+    @csrf
     <div class="form-group">
       <div class="row">
         <h2 align = "center">Добавление Дома</h2>
@@ -8,10 +9,20 @@
 
       <div class="row">
         <div class="col">
-          <label for="landmark">Район:</label>
+          <label for="type">Тип объекта:</label>
         </div>
         <div class="col">
-          <select style="height: 30px; width: 182px;">
+          <input type="text" name="type" value="Дом"><br>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col">
+          <label for="landMark">Район:</label>
+        </div>
+        <div class="col">
+          <select name="landMark" style="height: 30px; width: 182px;">
             <option>СЖМ</option>
             <option>ВЖМ</option>
             <option>ЗЖМ</option>
@@ -97,10 +108,10 @@
 
       <div class="row">
         <div class="col">
-          <label for="squareLiving">Жилая площадь:</label>
+          <label for="livingSquare">Жилая площадь:</label>
         </div>
         <div class="col">
-          <input type="text" name="squareLiving" value="" size = "15">кв.м.<br>
+          <input type="text" name="livingSquare" value="" size = "15">кв.м.<br>
         </div>
       </div>
       <hr>
@@ -256,6 +267,11 @@
       </div>
       <hr>
 
+      <div class="row">
+        <div class="col">
+          <input class = "btn btn-success" type="submit" name="btn_submit" value="Добавить">
+        </div>
+      </div>
     </div>
   </form>
 </div>
