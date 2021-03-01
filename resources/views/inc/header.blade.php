@@ -31,6 +31,9 @@
         @csrf
         <input type="text" name="searchId" id="searchId" class="form-control mr-sm-2" placeholder="Поиск по ID">
         <button type="submit" name="button" class="btn btn-outline-success my-2 my-sm-2">Найти</button>
+        @error('searchId')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
       </form>
     </div>
   </div>

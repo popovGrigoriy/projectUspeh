@@ -83,3 +83,4 @@ Route::get('/addObject', function(){
       return view('addObject');
     })->name('addObject');
 Route::post('/add', [\App\Http\Controllers\addObjectController::class, 'addObject'])->name('addObjectPost');
+Route::post('/findFilterObject', [\App\Http\Controllers\findObjectController::class, 'findFilterObject'])->name('findFilterObject');
