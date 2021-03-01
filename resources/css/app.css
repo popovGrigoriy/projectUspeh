@@ -25,3 +25,11 @@ hr{
 .content{
   border-right: 1px solid black;
 }
+.square:hover{
+  box-shadow: 0 0 10px red;
+}
+.square div{
+  border: 1px solid black;
+  padding: 3px;
+  overflow: hidden;
+}
