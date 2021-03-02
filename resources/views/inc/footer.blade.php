@@ -1,4 +1,8 @@
-<footer class="footer container-fluid">
+<script type="text/javascript">
+  if ($(document).height() <= $(window).height())
+  $("footer").style("position: absolute; bottom: 0px;");
+</script>
+<footer class="footer container-fluid" id="footer">
   <div class="container">
     <div class="d-flex justify-content-between">
       <div class="footer-left">

@@ -13,11 +13,12 @@
   <title>@yield('title-block')</title>
 </head>
 <body>
-
-@include('inc.header')
-  <div class="container mt-5">
-    @yield('middle', View::make('inc.middle'))
-  </div>
+<div class="wrapCon">
+  @include('inc.header')
+    <div class="container mt-5 middleContent">
+      @yield('middle', View::make('inc.middle'))
+    </div>
+</div>
 @include('inc.footer')
 </body>
 </html>
