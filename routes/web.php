@@ -86,3 +86,5 @@ Route::get('/addObject', function(){
 Route::post('/add', [\App\Http\Controllers\addObjectController::class, 'addObject'])->name('addObjectPost');
 
 Route::post('/fullObject', [\App\Http\Controllers\fullObjectController::class, 'about'])->name('fullObject');
+
+Route::post('/fullObject', [\App\Http\Controllers\updateDescriptionController::class, 'update'])->name('updateDescription');

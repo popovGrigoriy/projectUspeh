@@ -19,13 +19,17 @@ html, body {
 .sub{
   font-size: 0.6em;
 }
-h3{
-  margin: 0px;
-}
 hr{
   padding: 0px;
   margin-top: 8px;
   margin-bottom: 8px;
+}
+.topPar div{
+  text-overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 .hline .firstLine{
   border-bottom: 1px ridge gray;
