@@ -30,6 +30,20 @@
             <option>СЖМ</option>
             <option>ЗЖМ</option>
             <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
           </select>
         </div>
       </div>
@@ -110,30 +124,6 @@
       </div>
       <hr>
 
-      <div class="row">
-        <div class="col">
-          <label for="conditionsHouses">Состояние</label>
-        </div>
-        <div class="col">
-          <select class="form-control form-control-sm" id="conditionsHouses" name="conditionsHouses">
-            <option>Хорошее</option>
-            <option>Жилое</option>
-            <option>Ремонт</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-      <div class="row">
-        <div class="col">
-          <label for="updated_atHouses">Дата изменения</label>
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="updated_atHouses" id="updated_atHouses">
-        </div>
-      </div>
-      <hr>
-
       <button type="submit" class="btn btn-primary w-100">Искать</button>
 
     </div>
@@ -149,9 +139,24 @@
         </div>
         <div class="col">
           <select class="form-control form-control-sm" id="landmarkFlat" name="landmarkFlat">
+            <option value = ''>Любой</option>
             <option>СЖМ</option>
             <option>ЗЖМ</option>
             <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
           </select>
         </div>
       </div>
@@ -208,21 +213,6 @@
 
       <div class="row">
         <div class="col">
-          <label for="conditionsFlat">Состояние</label>
-        </div>
-        <div class="col">
-          <select class="form-control form-control-sm" id="conditionsFlat" name="conditionsFlat">
-            <option>Хорошее</option>
-            <option>Жилое</option>
-            <option>Ремонт</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-
-      <div class="row">
-        <div class="col">
           <label for="squareFlatMin">Площадь квартиры</label>
         </div>
         <div class="col">
@@ -230,16 +220,6 @@
         </div>
         <div class="col">
           <input class="form-control form-control-sm" type="text" placeholder="до" name="squareFlatMax" id="squareFlatMax">
-        </div>
-      </div>
-      <hr>
-
-      <div class="row">
-        <div class="col">
-          <label for="updated_atFlat">Дата изменения</label>
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="updated_atFlat" id="updated_atFlat">
         </div>
       </div>
       <hr>
@@ -258,9 +238,24 @@
         </div>
         <div class="col">
           <select class="form-control form-control-sm" id="landmarkLand_plots" name="landmarkLand_plots">
+            <option value = ''>Любой</option>
             <option>СЖМ</option>
             <option>ЗЖМ</option>
             <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
           </select>
         </div>
       </div>
@@ -302,16 +297,6 @@
       </div>
       <hr>
 
-      <div class="row">
-        <div class="col">
-          <label for="updated_atLand_plots">Дата изменения</label>
-        </div>
-        <div class="col">
-          <input type="date" class="form-control form-control-sm" id="updated_atLand_plots" name="updated_atLand_plots" placeholder="Дата">
-        </div>
-      </div>
-      <hr>
-
       <button type="submit" class="btn btn-primary w-100">Искать</button>
     </div>
 
@@ -331,17 +316,13 @@
     } else if (label==2) {
       document.getElementById("1").style.display='none';
       document.getElementById("2").style.display='block';
-      document.getElementById("l3").style.display='none';
+      document.getElementById("3").style.display='none';
 
     } else if (label==3) {
       document.getElementById("1").style.display='none';
       document.getElementById("2").style.display='none';
       document.getElementById("3").style.display='block';
 
-    } else {
-      document.getElementById("1").style.display='block';
-      document.getElementById("2").style.display='none';
-      document.getElementById("3").style.display='none';
     }
 
   }

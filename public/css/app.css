@@ -26,3 +26,7 @@ hr{
   border-right: 1px solid black;
 }
 
+Input.widthInput{
+  width: 150px;
+}
+

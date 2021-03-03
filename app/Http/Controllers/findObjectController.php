@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\flat;
 use App\Models\house;
-use App\Models\land_plots;
+use App\Models\land_plot;
 use Illuminate\Support\Facades\DB;
 
 class findObjectController extends Controller
 {
     public function findFilterObject(Request $request){
       $type = $request->only(['typeObject']);
-      if ($type = 1){
+      if ($type['typeObject'] == "1"){
         $Object = new house;
         if($request->landmarkHouses != null){
           $Object = $Object->where('landmark', '=', $request->landmarkHouses);
@@ -50,17 +50,12 @@ class findObjectController extends Controller
         if($request->roomsHousesMax != null){
           $Object = $Object->where('rooms', '<=', $request->roomsHousesMax);
         }
-        if($request->conditionsHouses != null){
-          $Object = $Object->where('conditions', '=', $request->conditionsHouses);
-        }
-        if($request->updated_atHouses != null){
-          $Object = $Object->where('updated_at', '=', $request->updated_atHouses);
-        }
 
          return view('/findFilterObject', ['data'=> $Object->get()]);
 
       }
-      if ($type = 2){
+      if ($type['typeObject'] == "2"){
+        $Object = new flat;
         if($request->landmarkFlat != null){
           $Object = $Object->where('landmark', '=', $request->landmarkFlat);
         }
@@ -85,22 +80,18 @@ class findObjectController extends Controller
         if($request->roomsFlatMax != null){
           $Object = $Object->where('rooms', '<=', $request->roomsFlatMax);
         }
-        if($request->conditionsFlat != null){
-          $Object = $Object->where('conditions', '=', $request->conditionsFlat);
-        }
         if($request->squareFlatMin != null){
           $Object = $Object->where('square', '>=', $request->squareFlatMin);
         }
         if($request->squareFlatMax != null){
           $Object = $Object->where('square', '<=', $request->squareFlatMax);
         }
-        if($request->updated_atFlat != null){
-          $Object = $Object->where('updated_at', '=', $request->updated_atFlat);
-        }
+
         return view('/findFilterObject', ['data'=> $Object->get()]);
       }
 
-      if ($type = 3){
+      if ($type['typeObject'] == "3"){
+        $Object = new land_plot;
         if($request->landmarkLand_plots != null){
           $Object = $Object->where('landmark', '=', $request->landmarkLand_plots);
         }
@@ -118,9 +109,6 @@ class findObjectController extends Controller
         }
         if($request->sizeLand_plotsMax != null){
           $Object = $Object->where('size', '<=', $request->sizeLand_plotsMax);
-        }
-        if($request->updated_atLand_plots != null){
-          $Object = $Object->where('updated_at', '=', $request->updated_atLand_plots);
         }
 
         return view('/findFilterObject', ['data'=> $Object->get()]);

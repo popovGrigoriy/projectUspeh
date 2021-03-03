@@ -27,12 +27,21 @@
           <a href="/logout" class="nav-link">Выход</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-md-0" action="{{ route('findObject') }}" method="post">
+      <form class="form-group my-2 my-md-0" action="{{ route('findObject') }}" method="post">
         @csrf
-        <input type="text" name="searchId" id="searchId" class="form-control mr-sm-2" placeholder="Поиск по ID">
-        <button type="submit" name="button" class="btn btn-outline-success my-2 my-sm-2">Найти</button>
+        <div class="row">
+          <div class="col pr-0">
+            <input type="text" name="searchId" id="searchId" class="form-control form-control-sm pr-0 mr-0 sm-2 mb-1 widthInput" placeholder="Поиск по ID">
+            <input type="text" name="searchPhone" id="searchPhone" class="form-control form-control-sm pr-0 mr-0 sm-2 widthInput" placeholder="Поиск по Телефону">
+        </div>
+        <div class="col-3 pl-0">
+            <button type="submit" name="button" class="btn btn-outline-success my-2 my-sm-2 ">Найти</button>
+</div></div>
+        </div>
+
+
         @error('searchId')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger my-2 my-md-0">{{ $message }}</div>
         @enderror
       </form>
     </div>
