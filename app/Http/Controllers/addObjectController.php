@@ -15,7 +15,7 @@ class addObjectController extends Controller
     // print_r($type);
     // $arr = [6,3,8,13];
     // print_r($arr);
-    
+
     if($type['type'] == "Квартира"){
 
       $Object = new flat;
