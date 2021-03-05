@@ -1,5 +1,5 @@
-<form class="" action="{{ route('findObject') }}" method="post">
-
+<form class="" action="{{ route('findFilterObject') }}" method="post">
+@csrf
   <div class="form-group">
     <div class="row">
       <div class="col">
@@ -22,150 +22,109 @@
 
       <div class="row">
         <div class="col">
-          <label for="area">Район</label>
+          <label for="landmarkHouses">Район</label>
         </div>
         <div class="col">
-          <select class="form-control form-control-sm" id="lendmark" name="lendmark">
+          <select class="form-control form-control-sm" id="landmarkHouses" name="landmarkHouses">
+            <option value = ''>Любой</option>
             <option>СЖМ</option>
             <option>ЗЖМ</option>
             <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
           </select>
         </div>
       </div>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="price">Цена</label>
+          </div>
+          <div class="col">
+            <input class="form-control form-control-sm" type="text" placeholder="от" name="priceHousesMin" id="priceHousesMin">
+          </div>
+          <div class="col">
+            <input class="form-control form-control-sm" type="text" placeholder="до" name="priceHousesMax" id="priceHousesMax">
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="streetHouses">Улица</label>
+          </div>
+          <div class="col">
+            <input class="form-control" type="text" placeholder="Улица" name="streetHouses" id="streetHouses">
+          </div>
+        </div>
       <hr>
 
       <div class="row">
         <div class="col">
-          <label for="street">Улица</label>
+          <label for="floorsHouses">Этажность</label>
         </div>
         <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="Улица" name="street" id="street">
+          <input class="form-control form-control-sm" type="text" placeholder="от" name="floorsHousesMin" id="floorsHousesMin">
+        </div>
+        <div class="col">
+          <input class="form-control form-control-sm" type="text" placeholder="до" name="floorsHousesMax" id="floorsHousesMax">
         </div>
       </div>
       <hr>
 
       <div class="row">
         <div class="col">
-          <label for="area">Состояние</label>
+          <label for="sizeHouses">Размер участка</label>
         </div>
         <div class="col">
-          <select class="form-control form-control-sm" id="conditions" name="conditions">
-            <option>Хорошее</option>
-            <option>Жилое</option>
-            <option>Ремонт</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-      <label for="street">Площадь участка</label>
-      <div class="row">
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="street" id="street">
+          <input class="form-control form-control-sm" type="text" placeholder="от" name="sizeHousesMin" id="sizeHousesMin">
         </div>
         <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="до" name="street" id="street">
-        </div>
-      </div>
-      <hr>
-
-      <label for="street">Год постройки</label>
-      <div class="row">
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="street" id="street">
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="до" name="street" id="street">
-        </div>
-      </div>
-      <hr>
-
-      <label for="street">Комнат</label>
-      <div class="row">
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="street" id="street">
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="до" name="street" id="street">
+          <input class="form-control form-control-sm" type="text" placeholder="до" name="sizeHousesMax" id="sizeHousesMax">
         </div>
       </div>
       <hr>
 
       <div class="row">
         <div class="col">
-          <label for="area">Стены</label>
+          <label for="squareHousesMin">Площадь дома</label>
         </div>
         <div class="col">
-          <select class="form-control form-control-sm" id="area" name="area">
-            <option>Кирпич</option>
-            <option>Саман</option>
-            <option>Газоблок</option>
-          </select>
+          <input class="form-control form-control-sm" type="text" placeholder="от" name="squareHousesMin" id="squareHousesMin">
+        </div>
+        <div class="col">
+          <input class="form-control form-control-sm" type="text" placeholder="до" name="squareHousesMax" id="squareHousesMax">
         </div>
       </div>
       <hr>
 
       <div class="row">
         <div class="col">
-          <label for="area">Крыша</label>
+          <label for="roomsHouses">Кол-во комнат</label>
         </div>
         <div class="col">
-          <select class="form-control form-control-sm" id="area" name="area">
-            <option>шифер</option>
-            <option>Металл</option>
-            <option>Плоская</option>
-          </select>
+          <input class="form-control form-control-sm" type="text" placeholder="от" name="roomsHousesMin" id="roomsHousesMin">
+        </div>
+        <div class="col">
+          <input class="form-control form-control-sm" type="text" placeholder="до" name="roomsHousesMax" id="roomsHousesMax">
         </div>
       </div>
       <hr>
 
-      <label for="street">Этажность</label>
-      <div class="row">
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="street" id="street">
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="до" name="street" id="street">
-        </div>
-      </div>
-      <hr>
-
-      <label for="street">Фасад</label>
-      <div class="row">
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="street" id="street">
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="до" name="street" id="street">
-        </div>
-      </div>
-      <hr>
-
-      <div class="row">
-        <div class="col">
-          <label for="area">Газ</label>
-        </div>
-        <div class="col">
-          <select class="form-control form-control-sm" id="area" name="area">
-            <option>Есть</option>
-            <option>Нет</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-      <div class="row">
-        <div class="col">
-          <label for="area">Канализация</label>
-        </div>
-        <div class="col">
-          <select class="form-control form-control-sm" id="area" name="area">
-            <option>Центральная</option>
-            <option>Сливная яма</option>
-            <option>На участке</option>
-          </select>
-        </div>
-      </div>
+      <button type="submit" class="btn btn-primary w-100">Искать</button>
 
     </div>
 
@@ -180,9 +139,24 @@
         </div>
         <div class="col">
           <select class="form-control form-control-sm" id="landmarkFlat" name="landmarkFlat">
+            <option value = ''>Любой</option>
             <option>СЖМ</option>
             <option>ЗЖМ</option>
             <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
           </select>
         </div>
       </div>
@@ -239,21 +213,6 @@
 
       <div class="row">
         <div class="col">
-          <label for="conditionsFlat">Состояние</label>
-        </div>
-        <div class="col">
-          <select class="form-control form-control-sm" id="conditionsFlat" name="conditionsFlat">
-            <option>Хорошее</option>
-            <option>Жилое</option>
-            <option>Ремонт</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-
-      <div class="row">
-        <div class="col">
           <label for="squareFlatMin">Площадь квартиры</label>
         </div>
         <div class="col">
@@ -261,16 +220,6 @@
         </div>
         <div class="col">
           <input class="form-control form-control-sm" type="text" placeholder="до" name="squareFlatMax" id="squareFlatMax">
-        </div>
-      </div>
-      <hr>
-
-      <div class="row">
-        <div class="col">
-          <label for="updated_at">Дата изменения</label>
-        </div>
-        <div class="col">
-          <input class="form-control form-control-sm" type="text" placeholder="от" name="updated_at" id="updated_at">
         </div>
       </div>
       <hr>
@@ -283,8 +232,75 @@
 
 
     <div id='3' style='display: none;'>
-        Перечисляешь "Оборудование для мероприятий"
+      <div class="row">
+        <div class="col">
+          <label for="landmarkLand_plots">Район</label>
+        </div>
+        <div class="col">
+          <select class="form-control form-control-sm" id="landmarkLand_plots" name="landmarkLand_plots">
+            <option value = ''>Любой</option>
+            <option>СЖМ</option>
+            <option>ЗЖМ</option>
+            <option>ВЖМ</option>
+            <option>РДВС</option>
+            <option>Центр</option>
+            <option>Красныйсад</option>
+            <option>Гайдарапос.</option>
+            <option>Наливная</option>
+            <option>Азовский</option>
+            <option>Соленоеозеро</option>
+            <option>Залесье</option>
+            <option>Овощной</option>
+            <option>Солнечный</option>
+            <option>ПЧЛ</option>
+            <option>Вет.личебница</option>
+            <option>Авиагородок</option>
+            <option>Авиаторовсквер</option>
+          </select>
+        </div>
+      </div>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="priceLand_plots">Цена</label>
+          </div>
+          <div class="col">
+            <input class="form-control form-control-sm" type="text" placeholder="от" name="priceLand_plotsMin" id="priceLand_plotsMin">
+          </div>
+          <div class="col">
+            <input class="form-control form-control-sm" type="text" placeholder="до" name="priceLand_plotsMax" id="priceLand_plotsMax">
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="streetLand_plots">Улица</label>
+          </div>
+          <div class="col">
+            <input class="form-control" type="text" placeholder="Улица" name="streetLand_plots" id="streetLand_plots">
+          </div>
+        </div>
+      <hr>
+
+      <div class="row">
+        <div class="col">
+          <label for="sizeLand_plots">Размер участка</label>
+        </div>
+        <div class="col">
+          <input class="form-control form-control-sm" type="text" placeholder="от" name="sizeLand_plotsMin" id="sizeLand_plotsMin">
+        </div>
+        <div class="col">
+          <input class="form-control form-control-sm" type="text" placeholder="до" name="sizeLand_plotsMax" id="sizeLand_plotsMax">
+        </div>
+      </div>
+      <hr>
+
+      <button type="submit" class="btn btn-primary w-100">Искать</button>
     </div>
+
+
   </div>
 
 </form>
@@ -300,17 +316,13 @@
     } else if (label==2) {
       document.getElementById("1").style.display='none';
       document.getElementById("2").style.display='block';
-      document.getElementById("l3").style.display='none';
+      document.getElementById("3").style.display='none';
 
     } else if (label==3) {
       document.getElementById("1").style.display='none';
       document.getElementById("2").style.display='none';
       document.getElementById("3").style.display='block';
 
-    } else {
-      document.getElementById("1").style.display='block';
-      document.getElementById("2").style.display='none';
-      document.getElementById("3").style.display='none';
     }
 
   }
