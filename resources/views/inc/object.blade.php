@@ -1,11 +1,12 @@
 <h3>Найдено</h3>
+@isset($data)
 @foreach($data as $el)
 
   <div class="alert alert-info">
     <div class="row">
       <div class="col">
         <h2>
-          @if(substr($fullID, 0, 1) == 1) Дом
+          @if(substr($fullID, 0, 1) == 1) Дом 
           @elseif(substr($fullID, 0, 1) == 2) Квартира
           @elseif(substr($fullID, 0, 1) == 3) Участок
           @endif
@@ -34,7 +35,7 @@ document.getElementById('form').submit()">
         <div class="col-md-2">@if($el->description) {{ $el->description }} @else Нет @endif</div>
         <div class="col-md-2">{{ $el->updated_at }}</div>
         <div class="col-md-1">
-           @if($el->status == 1) Актуально
+           @if($el->id == 1) Актуально
             @else Неактуально
             @endif
         </div>
@@ -42,6 +43,7 @@ document.getElementById('form').submit()">
     </a>
   </div>
 @endforeach
+@endisset
 <form action="{{ route('findObject') }}" id="form" method="post" style="display: none;">
   @csrf
 <input type="hidden" name="searchId" value="{{$fullID}}" />

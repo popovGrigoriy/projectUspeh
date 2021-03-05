@@ -63,3 +63,7 @@ hr{
 .tableCell .row{
   width: 100%;
 }
+
+Input.widthInput{
+  width: 150px;
+}

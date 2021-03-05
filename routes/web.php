@@ -79,7 +79,7 @@ Route::get('/findObject', function(){
 
 Route::post('/findObject', [\App\http\Controllers\searchIdController::class, 'getObject'])->name('findObject');
 
-Route::get('/addObject', function(){
+Route::post('/addObject', function(){
       return view('addObject');
     })->name('addObject');
 
@@ -88,3 +88,7 @@ Route::post('/add', [\App\Http\Controllers\addObjectController::class, 'addObjec
 Route::post('/fullObject', [\App\Http\Controllers\fullObjectController::class, 'about'])->name('fullObject');
 
 Route::post('/fullObject', [\App\Http\Controllers\updateDescriptionController::class, 'update'])->name('updateDescription');
+
+Route::post('/findFilterObject', [\App\Http\Controllers\findObjectController::class, 'findFilterObject'])->name('findFilterObject');
+
+Route::post('/fullObject/success', [\App\Http\Controllers\updateDataController::class, 'update'])->name('updateData');
