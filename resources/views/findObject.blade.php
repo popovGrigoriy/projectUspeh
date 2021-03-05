@@ -2,6 +2,10 @@
 
 @section('title-block')Выборка@endsection
 
-@section('content')
-  @include('inc.object')
+@section('middle')
+<div class="row">
+  <div class="col-md-12 order-last order-md-first" >
+    @include('inc.object')
+  </div>
+</div>
 @endsection

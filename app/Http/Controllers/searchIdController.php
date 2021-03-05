@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class searchIdController extends Controller
 {
     public function getObject (Request $request){
+
       $IdNull = $request->only(['searchId']);
       if($IdNull['searchId'] != null){
       $fullId = $request->only(['searchId']);
@@ -37,7 +38,12 @@ class searchIdController extends Controller
           'searchId' => 'Нет такого id'
         ]);
       }
-      return view('/findObject', ['data'=> [$Object->find($id)]]);
+      if($request->only(['full'])){
+        return view('/fullObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+      }
+      else {
+        return view('/findObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+      }
       }
       else {
         $flat = new Flat;
@@ -52,7 +58,7 @@ class searchIdController extends Controller
           ]);
         }
         else{
-          return view('/findObject', ['data2' => $flat, 'data3' => $land_plot, 'data' => $house]);
+          return view('/findObject', ['data' => $house, 'data2' => $flat, 'data3' => $land_plot]);
         }
       }
     }
