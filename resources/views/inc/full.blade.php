@@ -287,6 +287,10 @@
       @endif
 
     </div>
-
+    <form class="" action="{{ route('updateData') }}" method="post">
+      @csrf
+      <input type="hidden" name="searchId" value="{{$fullID}}">
+      <input class="btn btn-danger" type="submit" name="btnUpdateAll" value="Отредактировать">
+    </form>
   @endforeach
 </div>
