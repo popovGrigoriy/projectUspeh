@@ -20,14 +20,24 @@
               <div class="col-md-7">
                 <select name="landMark" style="height: 30px; width: 182px;">
                   <option>{{$el->landmark}}</option>
+                  <option value = ''>Любой</option>
                   <option>СЖМ</option>
-                  <option>ВЖМ</option>
                   <option>ЗЖМ</option>
-                  <option>Центр</option>
+                  <option>ВЖМ</option>
                   <option>РДВС</option>
+                  <option>Центр</option>
+                  <option>Красныйсад</option>
+                  <option>Гайдарапос.</option>
                   <option>Наливная</option>
+                  <option>Азовский</option>
+                  <option>Соленоеозеро</option>
+                  <option>Залесье</option>
+                  <option>Овощной</option>
+                  <option>Солнечный</option>
+                  <option>ПЧЛ</option>
+                  <option>Вет.личебница</option>
                   <option>Авиагородок</option>
-                  <option>Гайдара</option>
+                  <option>Авиаторовсквер</option>
                 </select>
                 <br>
               </div>
@@ -100,7 +110,19 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5"> <label for="typeHouse">Тип дома:</label> </div>
-              <div class="col-md-7"> <input type="text" name="typeHouse" value="{{$el->typeHouse}}"><br> </div>
+              <div class="col-md-7">
+                <select name="typeHouse">
+                  <option>{{$el->typeHouse}}</option>
+                  <option>Панельный</option>
+                  <option>Кирпичный</option>
+                  <option>Сайдинг</option>
+                  <option>Газоблок</option>
+                  <option>Оштукатуренный</option>
+                  <option>Шелеванный</option>
+                  <option>Саман+Кирпич</option>
+                  <option>Канадская технология</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -110,13 +132,32 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5"> <label for="conditions">Состояние:</label> </div>
-              <div class="col-md-7"> <input type="text" name="conditions" value="{{$el->conditions}}"><br> </div>
+              <div class="col-md-7">
+                <select name="conditions">
+                  <option>{{$el->conditions}}</option>
+                  <option>Строй вариант</option>
+                  <option>Чистовая отделка</option>
+                  <option>Жилое</option>
+                  <option>Хорошее</option>
+                  <option>Отличное</option>
+                  <option>Требуется кап.ремонт</option>
+                  <option>Требуется косметич.ремонт</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5"> <label for="balcony">Балкон:</label> </div>
-              <div class="col-md-7"> <input type="text" name="balcony" value="{{$el->balcony}}"><br> </div>
+              <div class="col-md-7">
+                <select name="balcony">
+                  <option>{{$el->balcony}}</option>
+                  <option>Нет</option>
+                  <option>Застеклен</option>
+                  <option>Незастеклен</option>
+                  <option>2 и более</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +167,17 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5"> <label for="layout">Планировка:</label> </div>
-              <div class="col-md-7"> <input type="text" name="layout" value="{{$el->layout}}"><br> </div>
+              <div class="col-md-7">
+                <select name="layout">
+                  <option>{{$el->layout}}</option>
+                  <option>Улучшенная</option>
+                  <option>Хрущевка</option>
+                  <option>Комуналка</option>
+                  <option>Бабочка</option>
+                  <option>сталинка</option>
+                  <option>Современная</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="col-md-6">

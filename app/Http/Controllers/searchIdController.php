@@ -12,38 +12,38 @@ use Illuminate\Support\Facades\Auth;
 class searchIdController extends Controller
 {
     public function getObject (Request $request){
+
       $IdNull = $request->only(['searchId']);
       if($IdNull['searchId'] != null){
-        $fullId = $request->only(['searchId']);
-        $searchTable = substr($fullId['searchId'], 0, 1);
-        if($searchTable == 1){
-          $Object = new house;
-        }
-        else if($searchTable == 2){
-          $Object = new flat;
-        }
-        else if($searchTable == 3){
-          $Object = new land_plot;
-        }
-        else if($searchTable > 3){
-          return redirect()->intended(route('home'))->withErrors([
-            'searchId' => 'Нет такого id'
-            ]);
-        }
-        $id = "";
-        $id = substr($fullId['searchId'], 1);
-        if($Object->where('id', $id)->doesntExist()){
-          return redirect()->intended(route('home'))->withErrors([
-            'searchId' => 'Нет такого id'
+      $fullId = $request->only(['searchId']);
+      $searchTable = substr($fullId['searchId'], 0, 1);
+      if($searchTable == 1){
+        $Object = new house;
+      }
+      else if($searchTable == 2){
+        $Object = new flat;
+      }
+      else if($searchTable == 3){
+        $Object = new land_plot;
+      }
+      else if($searchTable > 3){
+        return redirect()->intended(route('home'))->withErrors([
+          'searchId' => 'Нет такого id'
           ]);
-        }
-        //print_r($request->only(['full']));
-        if($request->only(['full'])){
-          return view('/fullObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
-        }
-        else {
-          return view('/findObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
-        }
+      }
+      $id = "";
+      $id = substr($fullId['searchId'], 1);
+      if($Object->where('id', $id)->doesntExist()){
+        return redirect()->intended(route('home'))->withErrors([
+          'searchId' => 'Нет такого id'
+        ]);
+      }
+      if($request->only(['full'])){
+        return view('/fullObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+      }
+      else {
+        return view('/findObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+      }
       }
       else {
         $flat = new Flat;
@@ -58,7 +58,7 @@ class searchIdController extends Controller
           ]);
         }
         else{
-          return view('/findObject', ['data2' => $flat, 'data3' => $land_plot, 'data' => $house]);
+          return view('/findObject', ['data' => $house, 'data2' => $flat, 'data3' => $land_plot]);
         }
       }
     }
