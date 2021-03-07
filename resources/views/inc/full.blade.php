@@ -1,38 +1,65 @@
+<script type="text/javascript">
+
+var date1 = new Date();
+
+var day = date1.getDate();
+var Month = date1.getMonth();
+var year = date1.getFullYear();
+
+switch (Month)
+{
+case 0: Month="01"; break;
+case 1: Month="02"; break;
+case 2: Month="03"; break;
+case 3: Month="04"; break;
+case 4: Month="05"; break;
+case 5: Month="06"; break;
+case 6: Month="07"; break;
+case 7: Month="08"; break;
+case 8: Month="09"; break;
+case 9: Month="10"; break;
+case 10: Month="11"; break;
+case 11: Month="12"; break;
+}
+if(day < 10) day = "0" + day;
+var fullDate = "\n" + day + "." + Month + "." + year + "\n";
+</script>
 <div class="container">
   @foreach($data as $el)
     <div style="display: none;">
       @if($el->status == 1) {{$status = "Актуально"}}
-       @else {{$status = "Неактуально"}}
+       @else {{$status = "Не актуально"}}
        @endif
+       {{ $text = "Не указанно" }}
       {{ $type = substr($fullID,0,1) }}
-      @if($el->landmark)  @else {{ $el->landmark = "Не указанно" }} @endif
-      @if($el->street) {{ $el->street }} @else {{ $el->street = "Не указанно" }} @endif
-      @if($el->number) {{ $el->number }} @else {{ $el->number = "Не указанно" }} @endif
-      @if($el->conditions) {{ $el->conditions }} @else {{ $el->conditions = "Не указанно" }} @endif
-      @if($el->price) {{ $el->price }} @else {{ $el->price = "Не указанно" }} @endif
-      @if($el->agent) {{ $el->agent }} @else {{ $el->agent = "Не указанно" }} @endif
-      @if($el->sellers_name) {{ $el->sellers_name }} @else {{ $el->sellers_name = "Не указанно" }} @endif
-      @if($el->phone) {{ $el->phone }} @else {{ $el->phone = "Не указанно" }} @endif
-      @if($el->description) {{ $el->description }} @else {{ $el->description = "Не указанно" }} @endif
-      @if($el->size) {{ $el->size }} @else {{ $el->size = "Не указанно" }} @endif
-      @if($el->facade) {{ $el->facade }} @else {{ $el->facade = "Не указанно" }} @endif
-      @if($el->percentage) {{ $el->percentage }} @else {{ $el->percentage = "Не указанно" }} @endif
-      @if($el->gas) {{ $el->gas }} @else {{ $el->gas = "Не указанно" }} @endif
-      @if($el->sewerage) {{ $el->sewerage }} @else {{ $el->sewerage = "Не указанно" }} @endif
-      @if($el->slope) {{ $el->slope }} @else {{ $el->slope = "Не указанно" }} @endif
-      @if($el->floors) {{ $el->floors }} @else {{ $el->floors = "Не указанно" }} @endif
-      @if($el->rooms) {{ $el->rooms }} @else {{ $el->rooms = "Не указанно" }} @endif
-      @if($el->square) {{ $el->square }} @else {{ $el->square = "Не указанно" }} @endif
-      @if($el->livingSquare) {{ $el->livingSquare }} @else {{ $el->livingSquare = "Не указанно" }} @endif
-      @if($el->kitchen) {{ $el->kitchen }} @else {{ $el->kitchen = "Не указанно" }} @endif
-      @if($el->wall) {{ $el->wall }} @else {{ $el->wall = "Не указанно" }} @endif
-      @if($el->roof) {{ $el->roof }} @else {{ $el->roof = "Не указанно" }} @endif
-      @if($el->year) {{ $el->year }} @else {{ $el->year = "Не указанно" }} @endif
-      @if($el->yard) {{ $el->yard }} @else {{ $el->yard = "Не указанно" }} @endif
-      @if($el->layout) {{ $el->layout }} @else {{ $el->layout = "Не указанно" }} @endif
-      @if($el->balcony) {{ $el->balcony }} @else {{ $el->balcony = "Не указанно" }} @endif
-      @if($el->numberFlat) {{ $el->numberFlat }} @else {{ $el->numberFlat = "Не указанно" }} @endif
-      @if($el->typeHouse) {{ $el->typeHouse }} @else {{ $el->typeHouse = "Не указанно" }} @endif
+      @if($el->landmark)  @else {{ $el->landmark = $text }} @endif
+      @if($el->street) {{ $el->street }} @else {{ $el->street = $text }} @endif
+      @if($el->number) {{ $el->number }} @else {{ $el->number = $text }} @endif
+      @if($el->conditions) {{ $el->conditions }} @else {{ $el->conditions = $text }} @endif
+      @if($el->price) {{ $el->price }} @else {{ $el->price = $text }} @endif
+      @if($el->agent) {{ $el->agent }} @else {{ $el->agent = $text }} @endif
+      @if($el->sellers_name) {{ $el->sellers_name }} @else {{ $el->sellers_name = $text }} @endif
+      @if($el->phone) {{ $el->phone }} @else {{ $el->phone = $text }} @endif
+      @if($el->description) {{ $el->description }} @else {{ $el->description = $text }} @endif
+      @if($el->size) {{ $el->size }} @else {{ $el->size = $text }} @endif
+      @if($el->facade) {{ $el->facade }} @else {{ $el->facade = $text }} @endif
+      @if($el->percentage) {{ $el->percentage }} @else {{ $el->percentage = $text }} @endif
+      @if($el->gas) {{ $el->gas }} @else {{ $el->gas = $text }} @endif
+      @if($el->sewerage) {{ $el->sewerage }} @else {{ $el->sewerage = $text }} @endif
+      @if($el->slope) {{ $el->slope }} @else {{ $el->slope = $text }} @endif
+      @if($el->floors) {{ $el->floors }} @else {{ $el->floors = $text }} @endif
+      @if($el->rooms) {{ $el->rooms }} @else {{ $el->rooms = $text }} @endif
+      @if($el->square) {{ $el->square }} @else {{ $el->square = $text }} @endif
+      @if($el->livingSquare) {{ $el->livingSquare }} @else {{ $el->livingSquare = $text }} @endif
+      @if($el->kitchen) {{ $el->kitchen }} @else {{ $el->kitchen = $text }} @endif
+      @if($el->wall) {{ $el->wall }} @else {{ $el->wall = $text }} @endif
+      @if($el->roof) {{ $el->roof }} @else {{ $el->roof = $text }} @endif
+      @if($el->year) {{ $el->year }} @else {{ $el->year = $text }} @endif
+      @if($el->yard) {{ $el->yard }} @else {{ $el->yard = $text }} @endif
+      @if($el->layout) {{ $el->layout }} @else {{ $el->layout = $text }} @endif
+      @if($el->balcony) {{ $el->balcony }} @else {{ $el->balcony = $text }} @endif
+      @if($el->numberFlat) {{ $el->numberFlat }} @else {{ $el->numberFlat = $text }} @endif
+      @if($el->typeHouse) {{ $el->typeHouse }} @else {{ $el->typeHouse = $text }} @endif
     </div>
     <div class="hline">
       <div class="row firstLine">
@@ -92,7 +119,7 @@
             @csrf
             <input type="hidden" name="searchId" value="{{$fullID}}">
             <textarea name="description" id="description" rows="4" cols="80" disabled>{{ $el->description }}</textarea><br>
-            <button type="button" id="btn1" name="button" class="btn btn-warning" onclick="document.getElementById('description').removeAttribute('disabled'); document.getElementById('submit').removeAttribute('disabled');(this).style.display ='none';document.getElementById('btn2').style.display = 'inline';">Изменить</button>
+            <button type="button" id="btn1" name="button" class="btn btn-warning" onclick="document.getElementById('description').removeAttribute('disabled');document.getElementById('description').value += fullDate;document.getElementById('submit').removeAttribute('disabled');(this).style.display ='none';document.getElementById('btn2').style.display = 'inline';">Изменить</button>
             <button type="button" id="btn2" name="button" class="btn btn-warning" onclick="document.getElementById('description').setAttribute('disabled', 'disabled'); document.getElementById('submit').setAttribute('disabled', 'disabled');(this).style.display = 'none';document.getElementById('btn1').style.display = 'inline';" style="display:none;">Отменить</button>
             <input class="btn btn-success" id="submit" type="submit" name="submit" value="Сохранить" disabled>
           </form>
@@ -169,7 +196,14 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-5 fontStatic">Статус:</div>
-            <div class="col-7 fontVariable">{{ $status }}</div>
+            <div class="col-7 fontVariable">
+              {{ $status }}
+              @if($el->status == 1)
+              <button class="btn btn-danger" style="width: 100px; height: 20px; font-size : 12px; padding: 0px;" onclick="document.getElementById('formStatusT').submit();">Продано</button>
+              @else
+              <button class="btn btn-danger" style="width: 100px; height: 20px; font-size : 12px; padding: 0px;" onclick="document.getElementById('formStatusF').submit();">Актуально</button>
+              @endif
+             </div>
           </div>
         </div>
       </div>
@@ -276,6 +310,20 @@
             </div>
           </div>
 
+          <div class="row firstLine">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-5 fontStatic">SC:</div>
+                <div class="col-7 fontVariable">{{ $el->status }}</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-5 fontStatic">SC:</div>
+                <div class="col-7 fontVariable">{{ $el->status }}</div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -294,5 +342,15 @@
       <input class="btn btn-danger" type="submit" name="btnUpdateAll" value="Отредактировать">
     </form>
     @endunless
+    <form class="" id="formStatusT" action="{{ route('updateDescription') }}" method="post" style="display: none;">
+      @csrf
+      <input type="hidden" name="searchId" value="{{$fullID}}">
+      <input type="hidden" name="status" value="11">
+    </form>
+    <form class="" id="formStatusF" action="{{ route('updateDescription') }}" method="post" style="display: none;">
+      @csrf
+      <input type="hidden" name="searchId" value="{{$fullID}}">
+      <input type="hidden" name="status" value="22">
+    </form>
   @endforeach
 </div>

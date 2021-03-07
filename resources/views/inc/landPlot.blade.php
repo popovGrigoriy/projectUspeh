@@ -15,14 +15,24 @@
             <div class="col-md-5"> <label for="landMark">Район:</label> </div>
             <div class="col-md-7">
               <select name="landMark" style="height: 30px; width: 182px;">
+                <option value = ''>Не указанно</option>
                 <option>СЖМ</option>
-                <option>ВЖМ</option>
                 <option>ЗЖМ</option>
-                <option>Центр</option>
+                <option>ВЖМ</option>
                 <option>РДВС</option>
+                <option>Центр</option>
+                <option>Красныйсад</option>
+                <option>Гайдарапос.</option>
                 <option>Наливная</option>
+                <option>Азовский</option>
+                <option>Соленоеозеро</option>
+                <option>Залесье</option>
+                <option>Овощной</option>
+                <option>Солнечный</option>
+                <option>ПЧЛ</option>
+                <option>Вет.личебница</option>
                 <option>Авиагородок</option>
-                <option>Гайдара</option>
+                <option>Авиаторовсквер</option>
               </select>
               <br>
             </div>
@@ -62,7 +72,7 @@
         </div>
         <div class="col-md-6">
           <div class="row">
-            <div class="col-md-5"> <label for="percentage">Доля?:</label> </div>
+            <div class="col-md-5"> <label for="percentage">Доля:</label> </div>
             <div class="col-md-7"> <input type="text" name="percentage" value=""><br> </div>
           </div>
         </div>
@@ -72,14 +82,28 @@
       <div class="row">
         <div class="col-md-6">
           <div class="row">
-            <div class="col-md-5"> <label for="gas">Газ?:</label> </div>
-            <div class="col-md-7"> <input type="text" name="gas" value=""><br> </div>
+            <div class="col-md-5"> <label for="gas">Газ:</label> </div>
+            <div class="col-md-7">
+              <select name="gas">
+                <option value="">Не указанно</option>
+                <option>Да</option>
+                <option>Нет</option>
+                <option>По меже</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-5"> <label for="sewerage">Канализация:</label> </div>
-            <div class="col-md-7"> <input type="text" name="sewerage" value=""><br> </div>
+            <div class="col-md-7">
+              <select name="sewerage">
+                <option value="">Не указанно</option>
+                <option>Сливная яма</option>
+                <option>Городская</option>
+                <option>Нет</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -116,7 +140,7 @@
         </div>
       </div>
       <hr>
-      
+
       <div class="row">
         <div class="col">
           <label for="description">Описание:</label>

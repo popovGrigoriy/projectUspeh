@@ -51,6 +51,9 @@ class updateDataController extends Controller
       }
       else if($searchTable == 2){
         $Object = new flat;
+
+        $String = $Object->find($id);
+
         $String->landmark = $request->only('landMark')['landMark'];
         $String->street = $request->only('street')['street'];
         $String->number = $request->only('number')['number'];
@@ -76,6 +79,9 @@ class updateDataController extends Controller
       }
       else if($searchTable == 3){
         $Object = new land_plot;
+
+        $String = $Object->find($id);
+        
         $String->landmark = $request->only('landMark')['landMark'];
         $String->street = $request->only('street')['street'];
         $String->number = $request->only('number')['number'];

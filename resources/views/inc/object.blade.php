@@ -19,7 +19,7 @@
         </h2>
       </div>
     </div>
-
+    <div>
     <div class="row square">
       <div class="col-md-1">id</div>
       <div class="col-md-1">Район</div>
@@ -30,6 +30,7 @@
       <div class="col-md-2">Описание</div>
       <div class="col-md-2">Изменено</div>
       <div class="col-md-1">Статус</div>
+    </div>
     </div>
     <div style="display:none">
       {{$full = substr($fullID, 0, 1)}}
