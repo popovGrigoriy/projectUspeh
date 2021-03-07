@@ -68,3 +68,14 @@ Input.widthInput{
   width: 150px;
 }
 
+#mainImg{
+  width: 500px;
+  height: 400px;
+  box-shadow: 0 0 10px black;
+}
+
+.noMainImg{
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 10px black;
+}

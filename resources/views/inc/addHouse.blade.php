@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="{{ route('addObjectPost') }}" method="post">
+  <form action="{{ route('addObjectPost') }}" method="post" class="styleAdd">
     @csrf
     <div class="form-group">
       <div class="row">
@@ -12,9 +12,9 @@
       <div class="row">
         <div class="col-md-6">
           <div class="row">
-            <div class="col-md-5 fontStatic"> <label for="landMark">Район:</label> </div>
+            <div class="col-md-5 "> <label for="landMark">Район:</label> </div>
             <div class="col-md-7">
-              <select name="landMark" style="height: 30px; width: 182px;">
+              <select name="landMark">
                 <option value = ''>Любой</option>
                 <option>СЖМ</option>
                 <option>ЗЖМ</option>

@@ -81,7 +81,7 @@ class updateDataController extends Controller
         $Object = new land_plot;
 
         $String = $Object->find($id);
-        
+
         $String->landmark = $request->only('landMark')['landMark'];
         $String->street = $request->only('street')['street'];
         $String->number = $request->only('number')['number'];

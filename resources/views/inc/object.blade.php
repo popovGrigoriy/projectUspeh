@@ -6,6 +6,7 @@
   </div>
 @endif
 @isset($data)
+@if(!$data->isEmpty())
   <div class="alert alert-info">
     <div class="row">
       <div class="col">
@@ -59,9 +60,11 @@ document.getElementById('form{{$fullID}}').submit()">
     </form>
     @endforeach
   </div>
+@endif
   @endisset
 
   @isset($data2)
+  @if(!$data2->isEmpty())
     <div class="alert alert-info">
       <div class="row">
         <div class="col">
@@ -117,8 +120,10 @@ document.getElementById('form{{$fullID}}').submit()">
       </form>
       @endforeach
     </div>
+    @endif
     @endisset
     @isset($data3)
+    @if(!$data3->isEmpty())
       <div class="alert alert-info">
         <div class="row">
           <div class="col">
@@ -174,4 +179,5 @@ document.getElementById('form{{$fullID}}').submit()">
         </form>
         @endforeach
       </div>
+      @endif
       @endisset

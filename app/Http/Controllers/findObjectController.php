@@ -51,7 +51,7 @@ class findObjectController extends Controller
           $Object = $Object->where('rooms', '<=', $request->roomsHousesMax);
         }
 
-         return view('/findFilterObject', ['data'=> $Object->get()], ['fullID' => '111']);
+         return view('/findFilterObject', ['data'=> $Object->orderBy('updated_at', 'DESC')->get()], ['fullID' => '111']);
 
       }
       if ($type['typeObject'] == "2"){
@@ -87,7 +87,7 @@ class findObjectController extends Controller
           $Object = $Object->where('square', '<=', $request->squareFlatMax);
         }
 
-        return view('/findFilterObject', ['data'=> $Object->get()], ['fullID' => '222']);
+        return view('/findFilterObject', ['data'=> $Object->orderBy('updated_at', 'DESC')->get()], ['fullID' => '222']);
       }
 
       if ($type['typeObject'] == "3"){
@@ -111,7 +111,7 @@ class findObjectController extends Controller
           $Object = $Object->where('size', '<=', $request->sizeLand_plotsMax);
         }
 
-        return view('/findFilterObject', ['data'=> $Object->get()], ['fullID' => '333']);
+        return view('/findFilterObject', ['data'=> $Object->orderBy('updated_at', 'DESC')->get()], ['fullID' => '333']);
       }
 
     }
