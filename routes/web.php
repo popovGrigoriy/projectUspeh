@@ -41,7 +41,7 @@ Route::get('/registration', function () {
       return redirect(route('login'));
     }
         if(Auth::check()){
-      if(auth()->user()->login!='Admin' && auth()->user()->login!='Egor'){
+      if(auth()->user()->role !='admin'){
         return redirect(route('fail'));
       }
     }
@@ -75,7 +75,7 @@ Route::get('/findObject', function(){
         return redirect(route('login'));
       }
       return view('findObject');
-    })->name('fail');
+    })->name('findObject');
 
 Route::post('/findObject', [\App\http\Controllers\searchIdController::class, 'getObject'])->name('findObject');
 

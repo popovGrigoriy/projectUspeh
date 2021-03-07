@@ -38,11 +38,12 @@ class searchIdController extends Controller
           'searchId' => 'Нет такого id'
         ]);
       }
+      $Object = $Object->where('id', $id)->get();
       if($request->only(['full'])){
-        return view('/fullObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+        return view('/fullObject', ['data'=> $Object, 'fullID' => $fullId['searchId']]);
       }
       else {
-        return view('/findObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
+        return view('/findObject', ['data'=> $Object, 'fullID' => $fullId['searchId']]);
       }
       }
       else {
