@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="{{ route('addObjectPost') }}" method="post" class="styleAdd">
+  <form action="{{ route('addObjectPost') }}" method="post" class="styleAdd" autocomplete="off">
     @csrf
     <div class="form-group">
       <div class="row">
@@ -15,7 +15,7 @@
             <div class="col-md-5"> <label for="landMark">Район:</label> </div>
             <div class="col-md-7">
               <select name = "landMark" >
-                <option value = ''>Любой</option>
+                <option value = ''>Не указанно</option>
                 <option>СЖМ</option>
                 <option>ЗЖМ</option>
                 <option>ВЖМ</option>
@@ -178,6 +178,9 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-5"> <label for="agent">Агент:</label> </div>
+            <div class="" style="display:none">
+
+            </div>
             <div class="col-md-7"> <input type="text" name="agent" value=""><br> </div>
           </div>
         </div>

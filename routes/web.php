@@ -40,7 +40,7 @@ Route::get('/registration', function () {
     if(!Auth::check()){
       return redirect(route('login'));
     }
-        if(Auth::check()){
+    if(Auth::check()){
       if(auth()->user()->role !='admin'){
         return redirect(route('fail'));
       }

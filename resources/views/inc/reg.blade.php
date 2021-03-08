@@ -30,9 +30,9 @@
       @error('password')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
-    </div>  
+    </div>
     <div class="col">
-      <label for="password">Повторите пароль</label>
+      <label for="password2">Повторите пароль</label>
     </div>
     <div class="col">
       <input type="password" class="form-control" id="password2" name="password2">

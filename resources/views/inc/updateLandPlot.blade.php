@@ -1,6 +1,6 @@
 <div class="container">
   @foreach($data as $el)
-    <form action="{{ route('updateData') }}" method="post" class="styleAdd">
+    <form action="{{ route('updateData') }}" method="post" class="styleAdd" autocomplete="off">
       @csrf
       <div class="form-group">
         <div class="row">
