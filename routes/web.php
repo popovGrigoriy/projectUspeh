@@ -79,7 +79,21 @@ Route::get('/findObject', function(){
 
 Route::post('/findObject', [\App\http\Controllers\searchIdController::class, 'getObject'])->name('findObject');
 
+Route::get('/addObject', function(){
+      if(!Auth::check()){
+        return redirect(route('login'));
+      }
+      return redirect(route('home'));
+    });
 Route::post('/addObject', function(){
+      if(!Auth::check()){
+        return redirect(route('login'));
+      }
+      if(Auth::check()){
+        if(auth()->user()->role !='admin'){
+          return redirect(route('fail'));
+        }
+      }
       return view('addObject');
     })->name('addObject');
 

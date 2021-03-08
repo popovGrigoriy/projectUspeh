@@ -67,4 +67,26 @@ hr{
 Input.widthInput{
   width: 150px;
 }
+.sticky {
+  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 90px;
+  right: 0;
+  float: right;
+  background: #cccccc;
+  color: black;
+  width: 100%;
+  z-index: 100;
+}
+
+.bggg {
+  background: #cccccc;
+}
+
+.squareMain div{
+  border: 1px solid black;
+  padding: 3px;
+  overflow: hidden;
+}
 

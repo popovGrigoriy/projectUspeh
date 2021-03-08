@@ -21,11 +21,11 @@
 
            <div class="col border rounded p-4">
             <h3 class="text-center mb-4">Вход</h3>
-            <form method="POST" action="{{ route('loggin') }}">
+            <form method="POST" action="{{ route('loggin') }}" autocomplete="off">
               @csrf
                 <div class="form-group">
                   <label for="login">Логин</label>
-                  <input type="text" class="form-control" name="login" id="login">
+                  <input type="text" class="form-control" name="login" id="login" autocomplete="off">
                   @error('login')
                   <div class="alert alert-danger">{{ $message }}</div>
                   @enderror

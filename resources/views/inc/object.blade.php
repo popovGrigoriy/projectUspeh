@@ -7,7 +7,7 @@
 @endif
 @isset($data)
 @if(!$data->isEmpty())
-  <div class="alert alert-info">
+  <div class="alert alert-secondary">
     <div class="row">
       <div class="col">
         <h2>
@@ -19,8 +19,8 @@
         </h2>
       </div>
     </div>
-    <div>
-    <div class="row square">
+    <div class="sticky">
+    <div class="row squareMain bggg">
       <div class="col-md-1">id</div>
       <div class="col-md-1">Район</div>
       <div class="col-md-2">Улица</div>
@@ -66,7 +66,7 @@ document.getElementById('form{{$fullID}}').submit()">
 
   @isset($data2)
   @if(!$data2->isEmpty())
-    <div class="alert alert-info">
+    <div class="alert alert-secondary">
       <div class="row">
         <div class="col">
           <h2>
@@ -81,7 +81,7 @@ document.getElementById('form{{$fullID}}').submit()">
         </div>
       </div>
 
-      <div class="row square">
+      <div class="row squareMain">
         <div class="col-md-1">id</div>
         <div class="col-md-1">Район</div>
         <div class="col-md-2">Улица</div>
@@ -125,7 +125,7 @@ document.getElementById('form{{$fullID}}').submit()">
     @endisset
     @isset($data3)
     @if(!$data3->isEmpty())
-      <div class="alert alert-info">
+      <div class="alert alert-secondary">
         <div class="row">
           <div class="col">
             <h2>
@@ -140,7 +140,7 @@ document.getElementById('form{{$fullID}}').submit()">
           </div>
         </div>
 
-        <div class="row square">
+        <div class="row squareMain">
           <div class="col-md-1">id</div>
           <div class="col-md-1">Район</div>
           <div class="col-md-2">Улица</div>

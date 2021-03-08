@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="{{ route('addObjectPost') }}" method="post">
+  <form action="{{ route('addObjectPost') }}" method="post" autocomplete="off">
     @csrf
     <div class="form-group">
       <div class="row">

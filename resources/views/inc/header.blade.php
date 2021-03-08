@@ -31,7 +31,7 @@
           <a href="/logout" class="nav-link">Выход</a>
         </li>
       </ul>
-      <form class="form-group my-2 my-md-0" action="{{ route('findObject') }}" method="post">
+      <form class="form-group my-2 my-md-0" action="{{ route('findObject') }}" method="post" autocomplete="off">
         @csrf
         <div class="row">
           <div class="col pr-0">

@@ -1,4 +1,4 @@
-<form method="POST" action="/registration">
+<form method="POST" action="/registration" autocomplete="off">
   @csrf
   <div class="row">
     <div class="col">
