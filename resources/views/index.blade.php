@@ -21,7 +21,7 @@
 
            <div class="col border rounded p-4">
             <h3 class="text-center mb-4">Вход</h3>
-            <form method="POST" action="{{ route('loggin') }}">
+            <form method="POST" action="{{ route('loggin') }}" autocomplete="off">
               @csrf
                 <div class="form-group">
                   <label for="login">Логин</label>

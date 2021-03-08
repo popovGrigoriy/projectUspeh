@@ -1,4 +1,4 @@
-<form class="" action="{{ route('findFilterObject') }}" method="post">
+<form class="" action="{{ route('findFilterObject') }}" method="post" autocomplete="off">
 @csrf
   <div class="form-group">
     <div class="row">

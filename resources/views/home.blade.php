@@ -3,5 +3,5 @@
 @section('title-block')Главная@endsection
 
 @section('content')
-  <p>Главная</p>
+  @include('inc.gallery')
 @endsection

@@ -335,11 +335,13 @@ var fullDate = "\n" + day + "." + Month + "." + year + "\n";
       @endif
 
     </div>
+    @unless (Auth::user()->role != 'admin')
     <form class="" action="{{ route('updateData') }}" method="post">
       @csrf
       <input type="hidden" name="searchId" value="{{$fullID}}">
       <input class="btn btn-danger" type="submit" name="btnUpdateAll" value="Отредактировать">
     </form>
+    @endunless
     <form class="" id="formStatusT" action="{{ route('updateDescription') }}" method="post" style="display: none;">
       @csrf
       <input type="hidden" name="searchId" value="{{$fullID}}">

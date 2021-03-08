@@ -9,12 +9,11 @@
         <li class="nav-item">
           <a href="/home" class="nav-link">Главная</a>
         </li>
+        @unless (Auth::user()->role != 'admin')
         <li class="nav-item">
           <a href="/registration" class="nav-link">Регистрация</a>
         </li>
-        <li class="nav-item">
-          <a href="/object" class="nav-link">Обьекты</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id = "addObject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Добавить объект</a>
           <div class="dropdown-menu" aria-labelledby="addObject">
@@ -27,11 +26,12 @@
             </form>
           </div>
         </li>
+        @endunless
         <li class="nav-item">
           <a href="/logout" class="nav-link">Выход</a>
         </li>
       </ul>
-      <form class="form-group my-2 my-md-0" action="{{ route('findObject') }}" method="post">
+      <form class="form-group my-2 my-md-0" action="{{ route('findObject') }}" method="post" autocomplete="off">
         @csrf
         <div class="row">
           <div class="col pr-0">

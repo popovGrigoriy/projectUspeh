@@ -6,6 +6,7 @@
   </div>
 @endif
 @isset($data)
+@if(!$data->isEmpty())
   <div class="alert alert-info">
     <div class="row">
       <div class="col">
@@ -18,7 +19,7 @@
         </h2>
       </div>
     </div>
-
+    <div>
     <div class="row square">
       <div class="col-md-1">id</div>
       <div class="col-md-1">Район</div>
@@ -29,6 +30,7 @@
       <div class="col-md-2">Описание</div>
       <div class="col-md-2">Изменено</div>
       <div class="col-md-1">Статус</div>
+    </div>
     </div>
     <div style="display:none">
       {{$full = substr($fullID, 0, 1)}}
@@ -59,9 +61,11 @@ document.getElementById('form{{$fullID}}').submit()">
     </form>
     @endforeach
   </div>
+@endif
   @endisset
 
   @isset($data2)
+  @if(!$data2->isEmpty())
     <div class="alert alert-info">
       <div class="row">
         <div class="col">
@@ -117,8 +121,10 @@ document.getElementById('form{{$fullID}}').submit()">
       </form>
       @endforeach
     </div>
+    @endif
     @endisset
     @isset($data3)
+    @if(!$data3->isEmpty())
       <div class="alert alert-info">
         <div class="row">
           <div class="col">
@@ -174,4 +180,5 @@ document.getElementById('form{{$fullID}}').submit()">
         </form>
         @endforeach
       </div>
+      @endif
       @endisset
