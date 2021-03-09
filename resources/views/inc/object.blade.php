@@ -1,8 +1,10 @@
 <h3>Найдено</h3>
-
+<div style="display:none">
+  {{ $sells = "notsells" }}
+</div>
 @if(!isset($fullID))
   <div style="display:none">
-    {{$fullID = 111}}
+    {{ $fullID = 111 }}
   </div>
 @endif
 @isset($data)
@@ -33,24 +35,36 @@
     </div>
     </div>
     <div style="display:none">
-      {{$full = substr($fullID, 0, 1)}}
+      {{ $full = substr($fullID, 0, 1) }}
     </div>
     @foreach($data as $el)
     <div style="display:none">
-      {{$fullID =  $full . $el->id}}
+      {{ $fullID =  $full . $el->id }}
+      {{ $fullDescription = $el->description }}
     </div>
     <a href="javascript:;" onclick="javascript:
 document.getElementById('form{{$fullID}}').submit()">
-      <div class="row square">
+
+  @if($el->status == 0)
+
+  <div style="display:none">
+    {{ $sells = "sells" }}
+  </div>
+  @else
+  <div style="display:none">
+    {{ $sells = "notsells" }}
+  </div>
+  @endif
+      <div class="row square {{ $sells }}">
         <div class="col-md-1">{{$fullID}}</div>
         <div class="col-md-1">@if($el->landmark) {{$el->landmark}} @else Нет @endif</div>
         <div class="col-md-2">{{ $el->street }}</div>
         <div class="col-md-1">{{ $el->number }}</div>
         <div class="col-md-1">{{ $el->price }}</div>
         <div class="col-md-1">{{ $el->conditions }}</div>
-        <div class="col-md-2">@if($el->description) {{ $el->description }} @else Нет описания @endif</div>
+        <div class="col-md-2">@if($el->description) {!! substr($fullDescription, 0, 35) !!}... @else Нет описания @endif</div>
         <div class="col-md-2">{{ $el->updated_at }}</div>
-        <div class="col-md-1">
+        <div class="col-md-1">@if($el->status == 1) Активно @else Продан @endif
         </div>
       </div>
     </a>
@@ -81,7 +95,7 @@ document.getElementById('form{{$fullID}}').submit()">
         </div>
       </div>
 
-      <div class="row squareMain">
+      <div class="row squareMain bggg">
         <div class="col-md-1">id</div>
         <div class="col-md-1">Район</div>
         <div class="col-md-2">Улица</div>
@@ -98,19 +112,29 @@ document.getElementById('form{{$fullID}}').submit()">
       @foreach($data2 as $el)
       <div style="display:none">
         {{$fullID =  $full2 . $el->id}}
+        {{ $fullDescription = $el->description }}
       </div>
       <a href="javascript:;" onclick="javascript:
   document.getElementById('form{{$fullID}}').submit()">
-        <div class="row square">
+    @if($el->status == 0)
+    <div style="display:none">
+      {{ $sells = "sells" }}
+    </div>
+    @else
+    <div style="display:none">
+      {{ $sells = "notsells" }}
+    </div>
+    @endif
+      <div class="row square {{ $sells }}">
           <div class="col-md-1">{{$fullID}}</div>
           <div class="col-md-1">@if($el->landmark) {{$el->landmark}} @else Нет @endif</div>
           <div class="col-md-2">{{ $el->street }}</div>
           <div class="col-md-1">{{ $el->number }}</div>
           <div class="col-md-1">{{ $el->price }}</div>
           <div class="col-md-1">{{ $el->conditions }}</div>
-          <div class="col-md-2">@if($el->description) {{ $el->description }} @else Нет описания @endif</div>
+          <div class="col-md-2">@if($el->description) {!! substr($fullDescription, 0, 35) !!}... @else Нет описания @endif</div>
           <div class="col-md-2">{{ $el->updated_at }}</div>
-          <div class="col-md-1">
+          <div class="col-md-1">@if($el->status == 1) Активно @else Продан @endif
           </div>
         </div>
       </a>
@@ -140,7 +164,7 @@ document.getElementById('form{{$fullID}}').submit()">
           </div>
         </div>
 
-        <div class="row squareMain">
+        <div class="row squareMain bggg">
           <div class="col-md-1">id</div>
           <div class="col-md-1">Район</div>
           <div class="col-md-2">Улица</div>
@@ -157,20 +181,30 @@ document.getElementById('form{{$fullID}}').submit()">
         @foreach($data3 as $el)
         <div style="display:none">
           {{$fullID =  $full3 . $el->id}}
+          {{ $fullDescription = $el->description }}
         </div>
         <a href="javascript:;" onclick="javascript:
     document.getElementById('form{{$fullID}}').submit()">
-          <div class="row square">
+
+      @if($el->status == 0)
+      <div style="display:none">
+        {{ $sells = "sells" }}
+      </div>
+      @else
+      <div style="display:none">
+        {{ $sells = "notsells" }}
+      </div>
+      @endif
+        <div class="row square {{ $sells }}">
             <div class="col-md-1">{{$fullID}}</div>
             <div class="col-md-1">@if($el->landmark) {{$el->landmark}} @else Нет @endif</div>
             <div class="col-md-2">{{ $el->street }}</div>
             <div class="col-md-1">{{ $el->number }}</div>
             <div class="col-md-1">{{ $el->price }}</div>
             <div class="col-md-1">{{ $el->conditions }}</div>
-            <div class="col-md-2">@if($el->description) {{ $el->description }} @else Нет описания @endif</div>
+            <div class="col-md-2">@if($el->description) {!! substr($fullDescription, 0, 35) !!}... @else Нет описания @endif</div>
             <div class="col-md-2">{{ $el->updated_at }}</div>
-            <div class="col-md-1">
-            </div>
+            <div class="col-md-1">@if($el->status == 1) Активно @else Продан @endif</div>
           </div>
         </a>
         <form action="{{ route('findObject') }}" id="form{{$fullID}}" method="post" style="display: none;">

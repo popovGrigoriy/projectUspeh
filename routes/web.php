@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -94,7 +95,9 @@ Route::post('/addObject', function(){
           return redirect(route('fail'));
         }
       }
-      return view('addObject');
+      $users = new User;
+      $users = $users->all();
+      return view('addObject', ['data' => $users]);
     })->name('addObject');
 
 Route::post('/add', [\App\Http\Controllers\addObjectController::class, 'addObject'])->name('addObjectPost');

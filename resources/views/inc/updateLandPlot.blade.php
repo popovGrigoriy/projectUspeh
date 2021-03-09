@@ -1,6 +1,6 @@
 <div class="container">
   @foreach($data as $el)
-    <form action="{{ route('updateData') }}" method="post" autocomplete="off">
+    <form action="{{ route('updateData') }}" method="post" class="styleAdd" autocomplete="off">
       @csrf
       <div class="form-group">
         <div class="row">
@@ -159,7 +159,14 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5"> <label for="agent">Агент:</label> </div>
-              <div class="col-md-7"> <input type="text" name="agent" value="{{$el->agent}}"><br> </div>
+              <div class="col-md-7">
+                <select name="agent">
+                  <option>{{$el->agent}}</option>
+                  @foreach($data2 as $element)
+                  <option>{{ $element->login }}</option>
+                  @endforeach
+                </select>
+              </div>
             </div>
           </div>
           <div class="col-md-6">

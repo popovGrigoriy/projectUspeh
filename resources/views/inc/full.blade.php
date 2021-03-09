@@ -118,6 +118,7 @@ var fullDate = "\n" + day + "." + Month + "." + year + "\n";
           <form action="{{ route('updateDescription') }}" method="post">
             @csrf
             <input type="hidden" name="searchId" value="{{$fullID}}">
+            <input type="hidden" name="status" value="33">
             <textarea name="description" id="description" rows="4" cols="80" disabled>{{ $el->description }}</textarea><br>
             <button type="button" id="btn1" name="button" class="btn btn-warning" onclick="document.getElementById('description').removeAttribute('disabled');document.getElementById('description').value += fullDate;document.getElementById('submit').removeAttribute('disabled');(this).style.display ='none';document.getElementById('btn2').style.display = 'inline';">Изменить</button>
             <button type="button" id="btn2" name="button" class="btn btn-warning" onclick="document.getElementById('description').setAttribute('disabled', 'disabled'); document.getElementById('submit').setAttribute('disabled', 'disabled');(this).style.display = 'none';document.getElementById('btn1').style.display = 'inline';" style="display:none;">Отменить</button>

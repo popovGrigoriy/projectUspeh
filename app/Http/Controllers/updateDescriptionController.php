@@ -44,7 +44,7 @@ class updateDescriptionController extends Controller
         $String->status = "1";
       }
       else{
-        $String->description = $request->only(['description']);
+        $String->description = $request->only(['description'])['description'];;
       }
       $String->save();
 
@@ -60,8 +60,11 @@ class updateDescriptionController extends Controller
         $String->status = "1";
       }
       else{
-        $String->description = $request->only(['description']);
+        $String->description = $request->only(['description'])['description'];;
       }
+      $String->save();
+
+      return view('/fullObject', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId']]);
     }
   }
 }

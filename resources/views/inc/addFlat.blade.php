@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="{{ route('addObjectPost') }}" method="post" autocomplete="off">
+  <form action="{{ route('addObjectPost') }}" method="post" class="styleAdd" autocomplete="off">
     @csrf
     <div class="form-group">
       <div class="row">
@@ -181,7 +181,14 @@
             <div class="" style="display:none">
 
             </div>
-            <div class="col-md-7"> <input type="text" name="agent" value=""><br> </div>
+            <div class="col-md-7">
+              <select name="agent">
+                <option value="">Не указанно</option>
+                @foreach($data as $el)
+                <option>{{ $el->login }}</option>
+                @endforeach
+              </select>
+             </div>
           </div>
         </div>
       </div>
@@ -214,7 +221,7 @@
 
       <div class="row">
         <div class="col"> <label for="price">Цена:</label> </div>
-        <div class="col"> <input type="text" name="price" value="" size = "11">Тыс.руб.<br> </div>
+        <div class="col"> <input type="text" name="price"  size = "11">Тыс.руб.<br> </div>
       </div>
       <hr>
 

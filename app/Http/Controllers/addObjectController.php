@@ -38,6 +38,7 @@ class addObjectController extends Controller
       $Object->sellers_name = $request->input('sellers_name');
       $Object->phone = $request->input('phone');
       $Object->description = $request->input('description');
+      $Object->status = 1;
 
       $Object->save();
 
@@ -71,6 +72,7 @@ class addObjectController extends Controller
       $Object->agent = $request->input('agent');
       $Object->sellers_name = $request->input('sellers_name');
       $Object->phone = $request->input('phone');
+      $Object->status = 1;
 
       $Object->save();
 
@@ -95,7 +97,8 @@ class addObjectController extends Controller
       $Object->agent = $request->input('agent');
       $Object->sellers_name = $request->input('sellers_name');
       $Object->phone = $request->input('phone');
-
+      $Object->status = 1;
+      
       $Object->save();
 
       return redirect()->route('home');

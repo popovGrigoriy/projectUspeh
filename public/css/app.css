@@ -89,4 +89,20 @@ Input.widthInput{
   padding: 3px;
   overflow: hidden;
 }
+.styleAdd .col-md-5{
+  font-size: 16px;
+  color: gray;
+}
+.styleAdd .col-md-7 input{
+  height: 30px;
+  width: 140px;
+}
+.styleAdd .col-md-7 select{
+  height: 30px;
+  width: 140px;
+}
+
+.sells{
+  background: #ffcc99;
+}
 

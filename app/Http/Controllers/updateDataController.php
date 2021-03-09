@@ -7,6 +7,7 @@ use App\Models\flat;
 use App\Models\house;
 use App\Models\land_plot;
 use App\Http\Controllers\searchIdController;
+use App\Models\User;
 
 class updateDataController extends Controller
 {
@@ -14,7 +15,8 @@ class updateDataController extends Controller
     $fullId = $request->only(['searchId']);
     $searchTable = substr($fullId['searchId'], 0, 1);
     $id = substr($fullId['searchId'], 1);
-
+    $users = new User;
+    $users = $users->all();
     if($request->only(['full'])){
       if($searchTable == 1){
         $Object = new house;
@@ -81,7 +83,7 @@ class updateDataController extends Controller
         $Object = new land_plot;
 
         $String = $Object->find($id);
-        
+
         $String->landmark = $request->only('landMark')['landMark'];
         $String->street = $request->only('street')['street'];
         $String->number = $request->only('number')['number'];
@@ -107,17 +109,17 @@ class updateDataController extends Controller
       if($searchTable == 1){
         $Object = new house;
 
-        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable]);
+        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable, 'data2' => $users]);
       }
       else if($searchTable == 2){
         $Object = new flat;
 
-        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable]);
+        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable, 'data2' => $users]);
       }
       else if($searchTable == 3){
         $Object = new land_plot;
 
-        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable]);
+        return view('/updateData', ['data'=> [$Object->find($id)], 'fullID' => $fullId['searchId'], 'object' => $searchTable, 'data2' => $users]);
       }
     }
   }
